@@ -21,6 +21,7 @@
         <activity android:name=".VetHomeActivity"></activity>
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".VetPetLogsActivity"></activity>
+        <activity android:name=".VetTestResultsActivity"></activity>
 
     </application>
 

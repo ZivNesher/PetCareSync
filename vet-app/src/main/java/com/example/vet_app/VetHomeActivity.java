@@ -3,6 +3,7 @@ package com.example.vet_app;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,9 +27,20 @@ public class VetHomeActivity extends BaseActivity {
         vetPetRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new PetAdapter(pets, pet -> {
-            Intent intent = new Intent(this, VetPetLogsActivity.class);
-            intent.putExtra("petId", pet.getId());
-            startActivity(intent);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Choose action for " + pet.getName());
+            builder.setItems(new CharSequence[]{"Logs", "Test Results"}, (dialog, which) -> {
+                if (which == 0) {
+                    Intent intent = new Intent(this, VetPetLogsActivity.class);
+                    intent.putExtra("petId", pet.getId());
+                    startActivity(intent);
+                } else if (which == 1) {
+                    Intent intent = new Intent(this, VetTestResultsActivity.class);
+                    intent.putExtra("petId", pet.getId());
+                    startActivity(intent);
+                }
+            });
+            builder.show();
         });
 
         vetPetRecyclerView.setAdapter(adapter);

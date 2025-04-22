@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "935666906752",
+    "project_id": "petcaresync-6f7da",
+    "storage_bucket": "petcaresync-6f7da.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935666906752:android:d21094f6cf5a6a85f7d865",
+        "android_client_info": {
+          "package_name": "com.example.petowner_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACcZ9lITyPYM8R4mCCedY0AZs6xp4X4k8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

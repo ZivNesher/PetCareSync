@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:background="#F5F7FA">
 
     <!-- RecyclerView for logs -->
     <androidx.recyclerview.widget.RecyclerView
@@ -12,7 +14,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:clipToPadding="false"
-        android:paddingBottom="8dp"/>
+        android:paddingBottom="12dp"
+        android:scrollbars="vertical" />
 
     <!-- Divider -->
     <View
@@ -22,22 +25,36 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp" />
 
-    <!-- Log input field -->
-    <EditText
-        android:id="@+id/logInput"
+    <!-- Log input field using Material style -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/logInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter health note"
-        android:inputType="textMultiLine"
-        android:maxLines="4"
-        android:background="@android:drawable/edit_text"
-        android:padding="10dp"/>
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/logInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:minLines="2" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Button -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/saveLogButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Health Log"
-        android:layout_marginTop="8dp"/>
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#1976D2"
+        app:cornerRadius="16dp"
+        android:layout_marginTop="12dp" />
 </LinearLayout>
